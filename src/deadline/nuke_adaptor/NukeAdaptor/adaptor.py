@@ -432,7 +432,7 @@ class NukeAdaptor(Adaptor):
             FileNotFoundError: If the nuke_client.py file could not be found.
             KeyError: If a configuration for the given platform and version does not exist.
         """
-        nuke_exe = os.environ.get("NUKE_ADAPTOR_NUKE_EXECUTABLE", "nuke")
+        nuke_exe = os.environ.get("NUKE_EXECUTABLE", "nuke")
         regexhandler = RegexHandler(self.regex_callbacks)
 
         # Add the Open Job Description namespace directory to PYTHONPATH, so that adaptor_runtime_client
