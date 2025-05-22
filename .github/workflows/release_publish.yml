@@ -17,7 +17,7 @@ jobs:
     permissions:
       id-token: write
       contents: write
-    uses: aws-deadline/.github/.github/workflows/reusable_publish_v2.yml@mainline
+    uses: moorec-aws/.github/.github/workflows/reusable_publish_v2.yml@mainline
     with:
       installer_oses: "['Linux', 'Windows', 'MacOS']"
     secrets: inherit
@@ -25,6 +25,7 @@ jobs:
   # # See https://github.com/pypi/warehouse/issues/11096
   PublishToPyPI:
     needs: Publish
+    if: ${{ false }}  # This job will always be skipped
     runs-on: ubuntu-latest
     environment: release
     permissions:
